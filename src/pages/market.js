@@ -1,27 +1,27 @@
 import Menu from "@/components/menu";
 import Head from "next/head";
 import { useState } from 'react';
-//import partyChainContract from "../../contractInstances/partychain";
 import web3 from "../../contractinstances/web3";
 import Footer from '../components/footer';
+import btgOpcContract from "../../contractinstances/btgopc";
 
 const Events = ({ eventos }) => {
-  //const items = eventos.map((item, index) => {
-  //  return (
-  //    <div
-  //      key={index}
-  //      className="p-3 bg-sky-800 rounded-lg flex flex-col items-center"
-  //    >
-  //      <h1>{item[1]}</h1>
-  //      <p>Id: {item[0]}</p>
-  //      <p>Description: {item[3]}</p>
-  //      <p>Location: {item[4]}</p>
-  //      <p>Date: {item[5]}</p>
-  //      <p>Price: {item[6]}</p>
-  //      <p>Attendees: {item[8]}</p>
-  //    </div>
-  //  );
-  //});
+  const items = eventos.map((item, index) => {
+    return (
+      <div
+        key={index}
+        className="p-3 bg-sky-800 rounded-lg flex flex-col items-center"
+      >
+        <h1>{item[1]}</h1>
+        <p>Id: {item[0]}</p>
+        <p>Description: {item[3]}</p>
+        <p>Location: {item[4]}</p>
+        <p>Date: {item[5]}</p>
+        <p>Price: {item[6]}</p>
+        <p>Attendees: {item[8]}</p>
+      </div>
+    );
+  });
 
   //const toggleMenu = () => {
   //  var menu = document.getElementById("filter-menu");
@@ -107,11 +107,11 @@ const Events = ({ eventos }) => {
   );
 };
 
-//export const getServerSideProps = async () => {
-//  const instance = partyChainContract(web3);
-//  const eventos = await instance.methods.getParties().call();
-//
-//  return { props: { eventos } };
-//};
+export const getServerSideProps = async () => {
+  const instance = btgOpcContract(web3);
+  const eventos = await instance.methods.getOptions().call();
+
+  return { props: { eventos } };
+};
 
 export default Events;
