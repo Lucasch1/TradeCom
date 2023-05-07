@@ -1,27 +1,27 @@
 # Documentação do Projeto
 
 ## Introdução
-Bem-vindo à documentação do projeto Tradecom! O Tradecom é um mercado de commodities e um mercado de opções de Ethereum baseado em blockchain que usa a stablecoin BTGDOL. Ele foi projetado para fornecer uma plataforma avançada e fácil de usar para compra e venda de commodities, bem como opções de Ethereum, de uma forma intuitiva e eficiente. 
+Bem-vindo à documentação do projeto TradeCom! O TradeCom é um mercado de commodities e um mercado de opções de Ethereum baseado em blockchain que usa a stablecoin BTGDOL. Ele foi projetado para fornecer uma plataforma avançada e fácil de usar para compra e venda de commodities, bem como opções de Ethereum, de uma forma intuitiva e eficiente. 
 
-O Tradecom é alimentado por tecnologia de blockchain, que oferece transações seguras e imutáveis, garantindo que todas as transações realizadas no mercado sejam seguras e confiáveis. A plataforma oferece suporte a várias commodities, como ouro, prata, petróleo e outros produtos básicos, e oferece opções de Ethereum para negociação.
+O TradeCom é alimentado por tecnologia de blockchain, que oferece transações seguras e imutáveis, garantindo que todas as transações realizadas no mercado sejam seguras e confiáveis. A plataforma oferece suporte a várias commodities, como ouro, prata, petróleo e outros produtos básicos, e oferece opções de Ethereum para negociação.
 
-Nesta documentação, você encontrará todas as informações necessárias para instalar, configurar e usar a plataforma Tradecom. Ele fornece uma visão geral do projeto, explica os requisitos de instalação e uso, e inclui informações detalhadas sobre como usar o mercado de commodities e o mercado de opções de Ethereum. Além disso, a documentação também contém informações sobre como contribuir para o projeto, suporte e licença.
+Nesta documentação, você encontrará todas as informações necessárias para instalar, configurar e usar a plataforma TradeCom. Ele fornece uma visão geral do projeto, explica os requisitos de instalação e uso, e inclui informações detalhadas sobre como usar o mercado de commodities e o mercado de opções de Ethereum. Além disso, a documentação também contém informações sobre como contribuir para o projeto, suporte e licença.
 
-O Tradecom foi criado com a missão de tornar a negociação de commodities e opções de Ethereum mais fácil e acessível para todos. Esperamos que você encontre este projeto útil e aguardamos sua contribuição para o seu desenvolvimento contínuo.
+O TradeCom foi criado com a missão de tornar a negociação de commodities e opções de Ethereum mais fácil e acessível para todos. Esperamos que você encontre este projeto útil e aguardamos sua contribuição para o seu desenvolvimento contínuo.
 
 ## Instalação
 Certifique-se de ter o Git e o Node.js instalados em seu computador antes de começar. 
 
-Aqui estão os passos para instalar o projeto Tradecom:
+Aqui estão os passos para instalar o projeto TradeCom:
 
 1. Abra um terminal em seu computador e navegue até a pasta em que deseja clonar o repositório.
 2. Digite o seguinte comando para clonar o repositório:
    ```
-   git clone https://github.com/Lucasch1/COMARKET.git
+   git clone https://github.com/Lucasch1/TradeCom.git
    ```
 3. Navegue até a pasta clonada usando o comando:
    ```
-   cd tradecom
+   cd TradeCom
    ```
 4. Execute o seguinte comando para instalar as dependências do projeto:
    ```
@@ -34,10 +34,10 @@ Aqui estão os passos para instalar o projeto Tradecom:
    ```
    Isso iniciará o servidor local e abrirá a página inicial do projeto no navegador. 
 
-A partir daqui, você pode começar a usar a plataforma Tradecom localmente e fazer alterações no código, se desejar. Certifique-se de salvar as alterações e fazer commit no Git quando estiver pronto para enviá-las para o repositório.
+A partir daqui, você pode começar a usar a plataforma TradeCom localmente e fazer alterações no código, se desejar. Certifique-se de salvar as alterações e fazer commit no Git quando estiver pronto para enviá-las para o repositório.
 
 ## Uso
-O projeto Tradecom possui duas abas principais: "Sell Commodities" e "Create Options".
+O projeto TradeCom possui duas abas principais: "Sell Commodities" e "Create Options".
 
 Na aba "Sell Commodities", você pode criar tokens de commodities para venda. Para criar um novo token de commodity, siga as etapas abaixo:
 
@@ -64,7 +64,7 @@ Na página "Buy Options", você pode visualizar os contratos de opções de Ethe
 2. Insira as informações relevantes do exercício da opção, como a quantidade e outras informações necessárias.
 3. Clique em "Exercise Option" para exercer a opção.
 
-O projeto Tradecom é projetado para ser fácil de usar e intuitivo, com uma interface de usuário clara e amigável. Com as abas "Sell Commodities" e "Create Options", os usuários podem criar tokens de commodities e contratos de opções de Ethereum, enquanto as páginas "Market" e "Buy Options" permitem que os usuários comprem e exercitem esses tokens e contratos.
+O projeto TradeCom é projetado para ser fácil de usar e intuitivo, com uma interface de usuário clara e amigável. Com as abas "Sell Commodities" e "Create Options", os usuários podem criar tokens de commodities e contratos de opções de Ethereum, enquanto as páginas "Market" e "Buy Options" permitem que os usuários comprem e exercitem esses tokens e contratos.
 
 ## Licença
 A Licença MIT (Massachusetts Institute of Technology) é uma licença de software livre e de código aberto. Ela permite que qualquer pessoa use, copie, modifique, distribua e venda o software sob a condição de que a licença original seja incluída no código-fonte e na documentação. 
