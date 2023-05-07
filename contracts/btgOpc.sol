@@ -20,7 +20,6 @@ contract btgOpc is KeeperCompatibleInterface {
     uint contador = 0;
     uint cont = 0;
     address addr = 0x0172ae13E3583BF565957095D27caede3Abb172e;
-    opcDol public opc;
     mapping(address => bool) canBuy;
     
 
@@ -55,7 +54,7 @@ contract btgOpc is KeeperCompatibleInterface {
         
         ethPrice = uint(priceEth.getLatestPrice());
 
-        opc = opcDol ({
+        opcDol memory opc = opcDol ({
             id: cont,
             strike: _strike,
             dataVencimento: _date,
@@ -76,7 +75,7 @@ contract btgOpc is KeeperCompatibleInterface {
 
     function checkUpkeep(bytes calldata /* checkData */) external view override returns (bool upkeepNeeded, bytes memory /* performData */) {
         bool done;
-        done = opc.valid;
+        done = opcoes[0].valid;
         upkeepNeeded = done;        
         // We don't use the checkData in this example. The checkData is defined when the Upkeep was registered.
     }
