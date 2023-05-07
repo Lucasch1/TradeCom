@@ -1,4 +1,4 @@
-const address = '0x6BE7ca855C149E049E02054E7521A3924b2df698'
+const address = '0xaCd73E091D2D375A7C5492a20F6A4C9B3A7BFFe6'
 
 const { abi } = require('../build/contracts/btgOpc.json')
 
