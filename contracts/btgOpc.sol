@@ -33,23 +33,15 @@ contract btgOpc is KeeperCompatibleInterface {
     uint contador = 0;
     address addr = 0x0172ae13E3583BF565957095D27caede3Abb172e;
     buyRequest [] public buyersList;
+    opcDol public opc;
     mapping(address => bool) canBuy;
-    
-    
     
     //uint256 lastTimeStamp;
     //uint256 interval;
-
-    
-    
     struct buyRequest {
         address buyer;
         uint value;
     }
-
-    
-
-    
 
     struct opcDol {
             uint strike; // eth em dolar
@@ -63,7 +55,6 @@ contract btgOpc is KeeperCompatibleInterface {
             address buyer;
     }
     
-    opcDol public opc;
 
     constructor (uint _strike, uint _date, uint _prizePrice, string memory _description, uint _value, address _chainlinkPriceAddr, address _optionslistAddr) payable {
         
