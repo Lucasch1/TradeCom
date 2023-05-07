@@ -49,7 +49,7 @@ export default function Menu(){
               <nav>
                 <ul className="flex">
                   <li className="mx-6 px-3 py-1 rounded-lg transition hover:bg-amber/50">
-                    <Link href="/home">Home</Link>
+                    <Link href="/">Home</Link>
                   </li>
                   <li className="mx-6 px-3 py-1 rounded-lg transition hover:bg-amber/50">
                       <Link href="/market">Market</Link>

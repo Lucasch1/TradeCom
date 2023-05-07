@@ -118,6 +118,7 @@ const Events = ({ eventos }) => {
                                     }`}
                                     onClick={() => handleClick(index)}
                                 >
+                                    {index}
                         {selected === index && (
                             <>
                                 <div className="h-96 w-96 mr-6 bg-black/25 ">
