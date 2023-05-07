@@ -2,6 +2,8 @@ import Menu from "../components/menu"
 import React, { useState } from "react";
 import web3 from '../../contractinstances/web3';
 //import cotoken from '../../contracts/cotoken';
+import Footer from '../components/footer';
+import Head from "next/head";
 
 
 export default function party () {
@@ -25,6 +27,11 @@ export default function party () {
 
     return(
         <>
+            <Head>
+                <meta charSet="utf-8" />
+                <meta name="TradeCom" content="width=device-width, initial-scale=1" />
+                <title>TradeCom | Options</title>
+            </Head>
             <Menu/>
             <section className="w-full h-screen bg-white flex justify-center items-center text-amber">
                 <div className="w-1/2 h-2/3 bg-main/50 flex flex-col items-center rounded-xl shadow-2xl">
@@ -66,6 +73,7 @@ export default function party () {
                 </div>
 
             </section>
+            <Footer/>
         </>
     )
 }

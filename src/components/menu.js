@@ -40,16 +40,16 @@ export default function Menu(){
             <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         </Head>
-        <div className="w-full h-20 bg-main/75 absolute">
+        <div className="w-full h-20 bg-main/75 fixed">
           <header className="w-full max-w-screen-2xl h-20 mx-auto px-20 flex items-center text-white">
             <div className="mr-20 text-3xl font-bold">
-              <Link href="/">COMARKET</Link>
+              <Link href="/">TradeCom</Link>
             </div>
             <div className="w-full flex items-center justify-between">
               <nav>
                 <ul className="flex">
                   <li className="mx-6 px-3 py-1 rounded-lg transition hover:bg-amber/50">
-                    <Link href="/">Home</Link>
+                    <Link href="/home">Home</Link>
                   </li>
                   <li className="mx-6 px-3 py-1 rounded-lg transition hover:bg-amber/50">
                       <Link href="/market">Market</Link>
@@ -67,7 +67,7 @@ export default function Menu(){
               </nav>
               <div>
                 <button
-                  onClick={connectWalletHandler} className="w-32 h-10 bg-amber/75 text-dblue rounded-full hover:bg-amber"
+                  onClick={connectWalletHandler} className="w-32 h-10 bg-amber/50 text-dblue rounded-full hover:bg-amber active:bg-amber/50"
                 >
                   Connect
                 </button>
