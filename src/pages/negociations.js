@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useState } from 'react';
 import web3 from "../../contractinstances/web3";
 import btgOpcContract from "../../contractinstances/btgopc";
+import Footer from '../components/footer';
 
 const Events = ({ eventos }) => {
     const items = eventos.map((item, index) => {
@@ -76,40 +77,41 @@ const Events = ({ eventos }) => {
                             {items.map((_, index) => (
                                 <div
                                     key={index}
-                                    className={`p-3 h-20 bg-fuchsia-900/75 rounded-lg flex flex-row items-center ${
+                                    className={`p-3 h-20 bg-main rounded-lg flex flex-row items-center ${
                                         selected === index ? 'fixed w-full left-0 h-96 z-10 bg-main flex justify-center' : ''
                                     }`}
                                     onClick={() => handleClick(index)}
                                 >
-                        {selected === index && (
-                            <>
-                                <div className="h-96 w-96 mr-6 bg-black/25 ">
-                                    <div>{items}</div>
-                                    
-                                </div>
-                                <div className="h-96 mx-6 py-6 flex flex-col justify-between">
-                                    <button onClick={handleClose} className="bg-black/25 p-3 rounded-full">Close</button>
-                                    <div>
-                                        <input placeholder="value(BTGDOL)" className="p-2 h-10 rounded-l-full"></input>
+                                    {index}
+                            {selected === index && (
+                                <>
+                                    <div className="h-96 w-96 mr-6 bg-black/25 ">
+                                        <div>{items}</div>
                                         
-                                        <button className="bg-black/25 p-3 rounded-r-full">buy</button>
                                     </div>
-                                    <div>
-                                        <input placeholder="index" className="p-2 h-10 rounded-l-full"></input>
+                                    <div className="h-96 mx-6 py-6 flex flex-col justify-between">
+                                        <button onClick={handleClose} className="bg-black/25 p-3 rounded-full  hover:bg-black/75 active:bg-black/25">Close</button>
+                                        <div>
+                                            <input placeholder="value(BTGDOL)" className="p-2 h-10 rounded-l-full"></input>
+                                            
+                                            <button className="bg-black/25 p-3 rounded-r-full hover:bg-black/75 active:bg-black/25">buy</button>
+                                        </div>
+                                        <div>
+                                            <input placeholder="index" className="p-2 h-10 rounded-l-full"></input>
+                                            
+                                            <button className="bg-black/25 p-3 rounded-r-full  hover:bg-black/75 active:bg-black/25">approve(only owner)</button>
+                                        </div>
+                                        <div>
+                                            <input placeholder="index" className="p-2 h-10 rounded-l-full"></input>
+                                            
+                                            <button className="bg-black/25 p-3 rounded-r-full hover:bg-black/75 active:bg-black/25">execute</button>
+                                        </div>
                                         
-                                        <button className="bg-black/25 p-3 rounded-r-full">approve(only owner)</button>
-                                    </div>
-                                    <div>
-                                        <input placeholder="index" className="p-2 h-10 rounded-l-full"></input>
                                         
-                                        <button className="bg-black/25 p-3 rounded-r-full">execute</button>
                                     </div>
                                     
-                                    
-                                </div>
-                                
-                            </>
-                        )}
+                                </>
+                            )}
                         </div>
                     ))}
                     
@@ -118,9 +120,7 @@ const Events = ({ eventos }) => {
             </div>
         </div>
         </section>
-        <section className="text-black">
-            {items}
-        </section>
+        <Footer/>
     </>
   );
 };
