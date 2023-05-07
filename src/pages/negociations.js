@@ -5,6 +5,16 @@ import web3 from "../../contractinstances/web3";
 import btgOpcContract from "../../contractinstances/btgopc";
 
 const Events = ({ eventos }) => {
+    
+    const[index1, setIndex1] = useState('')
+    const[valor,setValor] = useState('')
+    const[index2, setIndex2] = useState('')
+    const[index3, setIndex3] = useState('')
+    const[index4, setIndex4] = useState('')
+    const[index5, setIndex5] = useState('')
+    const[valor2, setValor2] = useState('')
+    
+    
     const items = eventos.map((item, index) => {
         return (
             <div
@@ -18,6 +28,10 @@ const Events = ({ eventos }) => {
                 <p>Valor de cobertura: {item[3]}</p>
                 <p>Prize: {item[4]}</p>
                 <p>Description: {item[5]}</p>
+                <p>Emissor: {item[7]}</p>
+                <p>Owner: {item[8]}</p>
+                <p>Requests: {item[9][0]}</p>
+                <p>Requests(val): {item[10][0]}</p>
             </div>
         );
     });
@@ -44,7 +58,30 @@ const Events = ({ eventos }) => {
         event.stopPropagation();
     };  
 
+    const createRequestHandller = async () => {
+        const address = await web3.eth.getAccounts()
+        const instance = btgOpcContract(web3);
+        await instance.methods.creatBuyRequest(valor, index1).send({from: address[0]});
+    }
+    
+    const approveRequestHandller = async () => {
+        const address = await web3.eth.getAccounts()
+        const instance = btgOpcContract(web3);
+        await instance.methods.aproveRequest(index2, index3).send({from: address[0]});
+    }
+    
+    const executeHandller = async () => {
+        const address = await web3.eth.getAccounts()
+        const instance = btgOpcContract(web3);
+        await instance.methods.executeOpc(index4).send({from: address[0]});
+    }
 
+    const buyHandller = async () => {
+        const address = await web3.eth.getAccounts()
+        const instance = btgOpcContract(web3);
+        await instance.methods.buyOpc(index5, valor2).send({from: address[0], value: valor2});
+    }
+    
 
 
 
@@ -84,26 +121,34 @@ const Events = ({ eventos }) => {
                         {selected === index && (
                             <>
                                 <div className="h-96 w-96 mr-6 bg-black/25 ">
-                                    <div>{items}</div>
+                                    <div>{items[index]}</div>
                                     
                                 </div>
                                 <div className="h-96 mx-6 py-6 flex flex-col justify-between">
                                     <button onClick={handleClose} className="bg-black/25 p-3 rounded-full">Close</button>
                                     <div>
-                                        <input placeholder="value(BTGDOL)" className="p-2 h-10 rounded-l-full"></input>
+                                        <input onChange={(e) => setValor(e.target.value)} placeholder="value(BTGDOL)" className="p-2 h-10 rounded-l-full text-black"></input>
+                                        <input onChange={(e) => setIndex1(e.target.value)} placeholder="index" className="p-2 h-10 rounded-l-full text-black"></input>
                                         
-                                        <button className="bg-black/25 p-3 rounded-r-full">buy</button>
+                                        <button onClick={createRequestHandller} className="bg-black/25 p-3 rounded-r-full ">Create buy Request</button>
                                     </div>
                                     <div>
-                                        <input placeholder="index" className="p-2 h-10 rounded-l-full"></input>
+                                        <input onChange={(e) => setIndex2(e.target.value)} placeholder="Id" className="p-2 h-10 rounded-l-full text-black"></input>
+                                        <input onChange={(e) => setIndex3(e.target.value)} placeholder="Index2" className="p-2 h-10 rounded-l-full text-black"></input>
                                         
-                                        <button className="bg-black/25 p-3 rounded-r-full">approve(only owner)</button>
+                                        <button onClick={approveRequestHandller} className="bg-black/25 p-3 rounded-r-full">Approve buy Request (only owner)</button>
                                     </div>
                                     <div>
-                                        <input placeholder="index" className="p-2 h-10 rounded-l-full"></input>
+                                        <input onChange={(e) => setIndex4(e.target.value)} placeholder="index" className="p-2 h-10 rounded-l-full text-black"></input>
                                         
-                                        <button className="bg-black/25 p-3 rounded-r-full">execute</button>
+                                        <button onClick={executeHandller} className="bg-black/25 p-3 rounded-r-full">execute</button>
                                     </div>
+                                    <div>
+                                        <input onChange={(e) => setIndex5(e.target.value)} placeholder="index" className="p-2 h-10 rounded-l-full text-black"></input>
+                                        <input onChange={(e) => setValor2(e.target.value)} placeholder="value" className="p-2 h-10 rounded-l-full text-black"></input>
+                                        <button onClick={buyHandller} className="bg-black/25 p-3 rounded-r-full">buy</button>
+                                    </div>
+                                    
                                     
                                     
                                 </div>
