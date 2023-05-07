@@ -1,7 +1,7 @@
 import Menu from "../components/menu"
 import React, { useState } from "react";
 import web3 from '../../contractinstances/web3';
-//import cotoken from '../../contracts/cotoken';
+import cotoken from '../../contractinstances/cotoken';
 import Footer from '../components/footer';
 import Head from "next/head";
 
@@ -16,7 +16,7 @@ export default function party () {
     
     const createEventHandller = async () => {
         
-        //const instance = partyChainContract(web3);
+        const instance = cotoken(web3);
         const address = await web3.eth.getAccounts()
         
         await instance.methods.createEvent(name, description, location, date, price).send({

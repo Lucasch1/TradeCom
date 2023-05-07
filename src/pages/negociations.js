@@ -63,21 +63,21 @@ const Events = ({ eventos }) => {
                     </div>
                     <div className="flex justify-center">
                         <input className="px-4 h-10 rounded-l-full bg-amber/25 focus:border-amber focus:border-2 focus:outline-none"></input>
-                        <button className="bg-amber text-white p-2 h-10 rounded-r-full hover:bg-fuchsia-900 active:bg-fuchsia-900/75">
+                        <button className="bg-amber/50 text-white p-2 h-10 rounded-r-full hover:bg-amber active:bg-amber/75">
                             Search
                         </button>
                     </div>
                 </div>
 
                 <div className="py-10 text-white">
-                    <div className="flex justify-center py-6 text-fuchsia-900/75 text-3xl font-bold">Commodities Market</div>
+                    <div className="flex justify-center py-6 text-main text-3xl font-bold">Commodities Market</div>
                         <div>
                             <div className="w-full mx-auto px-20 max-w-screen-2xl grid grid-cols-3 gap-5">
-                            {[...Array(8)].map((_, index) => (
+                            {items.map((_, index) => (
                                 <div
                                     key={index}
                                     className={`p-3 h-20 bg-fuchsia-900/75 rounded-lg flex flex-row items-center ${
-                                        selected === index ? 'fixed w-full left-0 h-96 z-10 bg-fuchsia-900 flex justify-center' : ''
+                                        selected === index ? 'fixed w-full left-0 h-96 z-10 bg-main flex justify-center' : ''
                                     }`}
                                     onClick={() => handleClick(index)}
                                 >
@@ -89,7 +89,23 @@ const Events = ({ eventos }) => {
                                 </div>
                                 <div className="h-96 mx-6 py-6 flex flex-col justify-between">
                                     <button onClick={handleClose} className="bg-black/25 p-3 rounded-full">Close</button>
-                                    <button className="bg-black/25 p-3 rounded-full">Interact</button>
+                                    <div>
+                                        <input placeholder="value(BTGDOL)" className="p-2 h-10 rounded-l-full"></input>
+                                        
+                                        <button className="bg-black/25 p-3 rounded-r-full">buy</button>
+                                    </div>
+                                    <div>
+                                        <input placeholder="index" className="p-2 h-10 rounded-l-full"></input>
+                                        
+                                        <button className="bg-black/25 p-3 rounded-r-full">approve(only owner)</button>
+                                    </div>
+                                    <div>
+                                        <input placeholder="index" className="p-2 h-10 rounded-l-full"></input>
+                                        
+                                        <button className="bg-black/25 p-3 rounded-r-full">execute</button>
+                                    </div>
+                                    
+                                    
                                 </div>
                                 
                             </>
